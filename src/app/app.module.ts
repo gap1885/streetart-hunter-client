@@ -14,14 +14,18 @@ import { StreetartCreateComponent } from './pages/streetart-create/streetart-cre
 import { StreetartDetailComponent } from './pages/streetart-detail/streetart-detail.component';
 import { StreetartProfileComponent } from './pages/streetart-profile/streetart-profile.component';
 
+import { InitAuthGuard } from './guards/init-auth.guard';
+import { RequireAnonGuard } from './guards/require-anon.guard';
+import { RequireUserGuard } from './guards/require-user.guard';
+
 const routes: Routes = [
-  { path: '', component: HomepageComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SigninComponent },
-  { path: 'streetart-list', component: StreetartListComponent }, 
-  { path: 'profile', component: StreetartProfileComponent },
-  { path: 'streetart-detail', component: StreetartDetailComponent },
-  { path: 'streetart-create', component: StreetartCreateComponent },
+  { path: '', component: HomepageComponent, canActivate: [InitAuthGuard]},
+  { path: 'login', component: LoginComponent, canActivate: [InitAuthGuard] },
+  { path: 'signup', component: SigninComponent,canActivate: [InitAuthGuard] },
+  { path: 'streetart-list', component: StreetartListComponent, canActivate: [InitAuthGuard] }, 
+  { path: 'profile', component: StreetartProfileComponent, canActivate: [RequireUserGuard]},
+  { path: 'streetart-detail', component: StreetartDetailComponent, canActivate: [RequireUserGuard]},
+  { path: 'streetart-create', component: StreetartCreateComponent, canActivate: [RequireUserGuard] },
 
 
   
