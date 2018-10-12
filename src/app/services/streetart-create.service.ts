@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class StreetartCreateService {
-  private baseUrl = `${environment.apiUrl}+/streetart-create`;
+  private baseUrl = `${environment.apiUrl}/streetart-create`;
 
   constructor( private httpClient: HttpClient) { }
 

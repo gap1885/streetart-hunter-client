@@ -6,6 +6,6 @@ import { environment } from '../../environments/environment';
 })
 export class StreetartService {
  
-    private baseUrl = `${environment.apiUrl}+/streetart`;
+    private baseUrl = `${environment.apiUrl}/streetart`;
   constructor() { }
 }
