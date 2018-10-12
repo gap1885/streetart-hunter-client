@@ -1,3 +1,30 @@
-<p>
-  streetart-create works!
-</p>
+<h1> Upload a street art photo</h1>
+
+<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate >
+  <div class="field">
+    <label>Name</label>
+    <input type="text" name="name" [(ngModel)]="name" #numberField="ngModel"/>
+  </div>
+  <div class="field">
+    <label>Author</label>
+    <input type="text" name="author" [(ngModel)]="author" #numberField="ngModel"/>
+  </div>
+
+  <div class="field">
+    <label>Photo</label>
+    <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
+  </div>
+  
+  
+  <div class="field submit">
+    <button type="submit" >Add a photo</button>
+  </div>
+</form>
+
+<div class="card-container"*ngIf="streetartlist">
+  <div class="card" *ngFor="let streetartlist of streetartlists">
+    <h1>{{file.name}}</h1>
+    <h1>{{file.author}}</h1>
+    <img src="{{file.image}}" alt="">
+  </div> 
+</div>
