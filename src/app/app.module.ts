@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SigninComponent },
   { path: 'streetart-list', component: StreetartListComponent }, 
-  { path: 'streetart-profile', component: StreetartProfileComponent },
+  { path: 'profile', component: StreetartProfileComponent },
   { path: 'streetart-detail', component: StreetartDetailComponent },
   { path: 'streetart-create', component: StreetartCreateComponent },
 
@@ -38,11 +38,14 @@ const routes: Routes = [
     StreetartDetailComponent,
     StreetartProfileComponent
   ],
+
+
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

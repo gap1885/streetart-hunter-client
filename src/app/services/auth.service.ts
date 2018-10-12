@@ -46,4 +46,26 @@ export class AuthService {
       .toPromise()
       .then((data) => this.setUser(data));
   }
+
+  signup(user: any): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/signup`, user, options)
+      .toPromise()
+      .then((data) => this.setUser(data));
+  }
+
+  logout(): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/logout`, null, options)
+      .toPromise()
+      .then(() => this.setUser());
+  }
+
+  getUser(): any {
+    return this.user;
+  }
 }

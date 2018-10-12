@@ -14,7 +14,7 @@
     <label>password</label>
     <input type="text" name="password" [(ngModel)]="password" #usernameField="ngModel" required minlength="6" [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && passwordField.errors">
-      <p *ngIf="passswordield.errors.required" class="validation">username required</p>
+      <p *ngIf="passswordield.errors.required" class="validation">password required</p>
     </div>
   </div>
 

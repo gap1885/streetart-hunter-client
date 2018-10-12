@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -36,7 +35,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/profile']);
       })
       .catch((err) => {
-        this.error = err.error.code; // :-)
+        this.error = err.error.code;
         this.processing = false;
         this.feedbackEnabled = false;
       });
