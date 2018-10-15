@@ -23,10 +23,10 @@ import { RequireUserGuard } from './guards/require-user.guard';
 const routes: Routes = [
   { path: '', component: HomepageComponent, canActivate: [InitAuthGuard]},
   { path: 'login', component: LoginComponent, canActivate: [RequireAnonGuard] },
-  { path: 'signup', component: SigninComponent,canActivate: [InitAuthGuard] },
-  { path: 'list', component: StreetartListComponent, canActivate: [InitAuthGuard] }, 
+  { path: 'signup', component: SigninComponent,canActivate: [RequireAnonGuard] },
+  { path: 'streetart', component: StreetartListComponent, canActivate: [InitAuthGuard] }, 
   { path: 'profile', component: StreetartProfileComponent, canActivate: [RequireUserGuard]},
-  { path: 'detail', component: StreetartDetailComponent, canActivate: [RequireUserGuard]},
+  { path: 'streetart/:id', component: StreetartDetailComponent, canActivate: [RequireUserGuard]},
   { path: 'create', component: StreetartCreateComponent, canActivate: [RequireUserGuard] },
 
 
