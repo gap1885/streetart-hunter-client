@@ -1,8 +1,10 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 
 const pkg = require('./package.json');
 const app = express();
+
 
 const forceSSL = function () {
   return function (req, res, next) {
@@ -13,6 +15,11 @@ const forceSSL = function () {
     next();
   };
 };
+
+app.use(cors({
+  credentials: true,
+  origin: ['http://localhost:4200']
+}));
 
 app.use(forceSSL());
 

@@ -11,7 +11,7 @@ import { StreetartService } from '../../services/streetart.service';
 export class StreetartCreateComponent implements OnInit {
 
   uploader: FileUploader = new FileUploader({
-    url: 'http://localhost:3000/api'
+    url: 'http://localhost:3000/'
   });
 
   name: '';
