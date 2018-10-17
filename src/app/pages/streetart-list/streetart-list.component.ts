@@ -19,9 +19,10 @@ export class StreetartListComponent implements OnInit {
       console.log(this.streetArts)
     })
   }
- 
-
 }
+
+
+
 
 
 

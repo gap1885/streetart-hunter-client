@@ -1,13 +1,12 @@
 
-  <img class=img src="../../../../public/images/logo2.png" alt="logo">
+  <img class= logo src="../../../../public/images/logo2.png" alt="logo">
   <section class="about"> 
+    <h1>Street art hunter</h1>
     <p>Find street art works close to you. Join to the community</p>
   </section>
 
   <section class="card-container">
     <div class="card" *ngFor="let item of streetArts">
-      <h1>{{item.name}}</h1>
-      <p>{{item.author}}</p>
-      <img [src]="item.url" alt="">
+      <img class="card-image"[src]="item.url" alt="">
     </div>
   </section>

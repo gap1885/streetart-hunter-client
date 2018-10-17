@@ -1,4 +1,11 @@
 <h3> Welcome, {{user.username}}</h3>
 <h4> Add new picture</h4>
 <a [routerLink]="['/streetart/create']">create</a>
-<h4> My collection</h4>
+
+<h4> collection</h4>
+
+<section class="card-container">
+    <div class="card" *ngFor="let item of streetArts">
+      <img class="card-image"[src]="item.url" alt="">
+    </div>
+</section>

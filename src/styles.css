@@ -1,8 +1,9 @@
-* ---- reset ---- */
+/* ---- reset ---- */
 
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -18,44 +19,74 @@ body {
 body {
   color: #111;
   font-family:  'Segoe UI';
-  font-size: 16px;
+  font-size: 14px;
   line-height: 147%;
 }
 
-h1 {}
+h1 {color: #111;
+  font-family:  'Segoe UI';
+  font-size: 20px;
+  line-height: 147%;
+  margin-left: 110px;
+  position: relative;
 
-h2 {}
 
-h3 {}
+}
+
+h2 {color: #111;
+  font-family:  'Segoe UI';
+  font-size: 12px;
+  line-height: 147%;}
+
+h3 {
+  color: #111;
+  font-family:  'Segoe UI';
+  font-size: 10px;
+  line-height: 147%;
+}
 
 p {
-  position: relative;;
+  position: absolute;
 
-  margin: 0;
+  margin-left: 40px;
+  margin-bottom: 40px;
 }
 
 
 
 /* ---- layout ---- */
+html {
+  background-color: lightgray;
+}
 
 #site-header {
+  
   padding: 30px 0;
-  color: white;
+  color: red;
+  margin-left: 10px;
+  justify-content: space-between;
+
 
 }
 
 #site-footer {
-  color: white;
+  color: red;
   padding: 60px 0;
+  align-items: flex-end;
 ;
 }
 
 #site-main {
+  margin-left: 10px;
   margin-bottom: 60px;
+  justify-content: space-between;
 }
 
-.container {
-  margin: 0 20px;
+.card.container {
+  display: flex;
+  margin: 10 3 10 10px;
+  padding: 20px;
+  justify-content: space-between;
 }
 
 .section {
@@ -74,9 +105,16 @@ p {
 
 
 /* ---- components ---- */
+.about{
+align-content: center;
+margin-top: 20px;
+margin-bottom: 70px;
+}
+
+
 
 .button {
-  width: 100%;
+  width: 50%;
   background-color: blue;
   color: #fff;
   border: 1px solid #fff
@@ -88,12 +126,28 @@ p {
 }
 
 /* ---- section ---- */
-img{
-display: block;
-width: 100%;
-position: absolute;
-margin: 10px;
+.card {
+  display: block;
+  background-color: rgba(252, 251, 249, 0.6);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 20px;
+  border-radius: 50px;
+  text-align: center;
+ 
+}
 
+
+img{
+  display: block;
+  width: 50%;
+  margin: 100px;
+}
+.logo{
+  width: 30%;
+  margin: 20px;
+  margin-left: 120px;
+ 
 
 }
+  
 

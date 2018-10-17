@@ -10,10 +10,10 @@ import { StreetartService } from '../../services/streetart.service';
 })
 export class HomepageComponent implements OnInit {
   streetArts: Array<any>
-  constructor(private streetArtService: StreetartService) {}
+  constructor(private streetartService: StreetartService) {}
 
   ngOnInit() {
-    this.streetArtService.getAll()
+    this.streetartService.getAll()
     .then((results) => {
       this.streetArts = results
       console.log(this.streetArts)

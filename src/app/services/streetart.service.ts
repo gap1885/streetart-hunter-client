@@ -17,6 +17,15 @@ export class StreetartService {
       };
       return this.httpClient.get(`${this.baseUrl}`, options)
         .toPromise();
+
+    }
+    create(data): Promise<any> {
+      const options = {
+        withCredentials: true
+      };
+      return this.httpClient.post(`${this.baseUrl}`, data, options)
+        .toPromise();
     }
   }
+
   

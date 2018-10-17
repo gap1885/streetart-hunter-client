@@ -1,29 +1,22 @@
 <h1> Upload a street art photo</h1>
-<form>
+<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate>
   <div class="editing">
-    <input type="text" name="name" [(ngModel)]="newStreetart.name">
-    <input type="text" name="author" [(ngModel)]="newStreetart.author">
-    <select name="photo" [(ngModel)]="newStreetart.category">
+    <input type="text" name="name" [(ngModel)]="name">
+    <input type="text" name="author" [(ngModel)]="author">
+    <select name="photo" [(ngModel)]="url">
       <option value="">- Pick one -</option>
-      <option img src="../../../../public/images/image2.jpg">Streetart1</option>
-      <option img src="../../../../public/images/image3.jpg">Streetart2</option>
-      <option img src="../../../../public/images/image4.jpg">Streetart3</option>
+      <option value="http://indietravel.net/wp-content/uploads/2013/11/Street-Art-by-Alice-in-Vitry-sur-Seine-France-1.jpeg">Streetart1</option>
+      <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrcY3y-hBRHnhsbUsSwNBQYjC-vzdZETzqvcCt-E1Q7e95RQPBnA">Streetart2</option>
+      <option value="https://cdn.theculturetrip.com/wp-content/uploads/2015/11/2905082810_22aaa7aed4_z.jpg">Streetart3</option>
     </select>
-    <button (click)="handleAddClick()">Add!</button>
+    <button type="submit" >Add!</button>
   </div>
-
-  <div class="card preview">
-    <h2>{{newStreetart.name}}</h2>
-    <h3>{{newStreetart.author}}</h3>
-    <img *ngIf="newCategory" [src]="imgs[newStreetart.category]">
-  </div>
-
 </form>
 
 <section class="card-container">
-  <div class="card" *ngFor="let item of streetArts">
-    <h1>{{item.name}}</h1>
-    <p>{{item.author}}</p>
-    <img [src]="item.url" alt="">
+  <div class="card" *ngFor="let streetart of streetarts">
+    <h1>{{streetart.name}}</h1>
+    <p>{{streetart.author}}</p>
+    <img [src]="streetart.url" alt="">
   </div>
 </section>
