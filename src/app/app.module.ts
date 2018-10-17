@@ -19,15 +19,19 @@ import { StreetartProfileComponent } from './pages/streetart-profile/streetart-p
 import { InitAuthGuard } from './guards/init-auth.guard';
 import { RequireAnonGuard } from './guards/require-anon.guard';
 import { RequireUserGuard } from './guards/require-user.guard';
+import { StreetartCardComponent } from './components/streetart-card/streetart-card.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, canActivate: [InitAuthGuard]},
   { path: 'login', component: LoginComponent, canActivate: [RequireAnonGuard] },
   { path: 'signup', component: SigninComponent,canActivate: [RequireAnonGuard] },
   { path: 'streetart', component: StreetartListComponent, canActivate: [InitAuthGuard] }, 
-  { path: 'profile', component: StreetartProfileComponent, canActivate: [RequireUserGuard]},
+  { path: 'profile/me', component: StreetartProfileComponent, canActivate: [RequireUserGuard]},
+  { path: 'streetart/create', component: StreetartCreateComponent, canActivate: [RequireUserGuard] },
   { path: 'streetart/:id', component: StreetartDetailComponent, canActivate: [RequireUserGuard]},
-  { path: 'create', component: StreetartCreateComponent, canActivate: [RequireUserGuard] },
+  { path: '**', component: NotFoundComponent, canActivate: [InitAuthGuard]},
+
 
 
   
@@ -42,7 +46,9 @@ const routes: Routes = [
     StreetartListComponent,
     StreetartCreateComponent,
     StreetartDetailComponent,
-    StreetartProfileComponent
+    StreetartProfileComponent,
+    StreetartCardComponent,
+    NotFoundComponent
   ],
 
 
