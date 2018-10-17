@@ -2,4 +2,12 @@
   <img class=img src="../../../../public/images/logo2.png" alt="logo">
   <section class="about"> 
     <p>Find street art works close to you. Join to the community</p>
-</section>
+  </section>
+
+  <section class="card-container">
+    <div class="card" *ngFor="let item of streetArts">
+      <h1>{{item.name}}</h1>
+      <p>{{item.author}}</p>
+      <img [src]="item.url" alt="">
+    </div>
+  </section>

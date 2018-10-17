@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { StreetartService } from '../../services/streetart.service';
 
 @Component({
   selector: 'app-homepage',
@@ -8,10 +9,15 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-
-  constructor() {}
+  streetArts: Array<any>
+  constructor(private streetArtService: StreetartService) {}
 
   ngOnInit() {
+    this.streetArtService.getAll()
+    .then((results) => {
+      this.streetArts = results
+      console.log(this.streetArts)
+    })
   }
 
 }

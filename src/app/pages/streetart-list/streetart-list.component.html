@@ -1,7 +1,7 @@
-<div class="card-container"*ngIf="streetart">
-  <div class="card" *ngFor="let streetart of streetarts">
-    <h1>{{file.name}}</h1>
-    <h1>{{file.author}}</h1>
-    <img src="{{file.image}}" alt="">
-  </div> 
-</div>
+<section class="card-container">
+  <div class="card" *ngFor="let item of streetArts">
+    <h1>{{item.name}}</h1>
+    <p>{{item.author}}</p>
+    <img [src]="item.url" alt="">
+  </div>
+</section>

@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [RequireAnonGuard] },
   { path: 'signup', component: SigninComponent,canActivate: [RequireAnonGuard] },
   { path: 'streetart', component: StreetartListComponent, canActivate: [InitAuthGuard] }, 
-  { path: 'profile/me', component: StreetartProfileComponent, canActivate: [RequireUserGuard]},
+  { path: 'profile', component: StreetartProfileComponent, canActivate: [RequireUserGuard]},
   { path: 'streetart/create', component: StreetartCreateComponent, canActivate: [RequireUserGuard] },
   { path: 'streetart/:id', component: StreetartDetailComponent, canActivate: [RequireUserGuard]},
   { path: '**', component: NotFoundComponent, canActivate: [InitAuthGuard]},

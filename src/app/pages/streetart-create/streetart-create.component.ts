@@ -8,49 +8,19 @@ import { StreetartService } from '../../services/streetart.service';
   templateUrl: './streetart-create.component.html',
   styleUrls: ['./streetart-create.component.css']
 })
-export class StreetartCreateComponent implements OnInit {
+export class StreetartCreateComponent {
+loading = true;
+streetart: Array<any> = [];
+imgs = {
+  'streetart1': 'https://theculturetrip.com/wp-content/uploads/2015/11/El-Pez-Track-Barcelona.jpg',  
+  'streetart2': 'https://southeastlondonblog.files.wordpress.com/2017/01/img_7625-1.jpg',  
+  'streetart3': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTVUszoOjFdtBa2ziwHHEU2qDooWycZUtTvqp-UGMtWJql_AlvLw'
+};
+newStreetart: any = {
+  author: 'author',
+  name: 'name',
 
-  uploader: FileUploader = new FileUploader({
-    url: 'http://localhost:3000/'
-  });
+};
 
-  name: '';
-  author: '';
-
-  feedback: string;
-
-  streetartlist: any;
-
-  constructor(
-    private StreetartCreateService: StreetartCreateService
-  ) {}
-
-
-  ngOnInit() {
-    this.StreetartCreateService.getAll()
-    .then((results) => {
-      this.streetartlist = results;
-    });
-
-  this.uploader.onSuccessItem = (item, response) => {
-    this.StreetartCreateService.getAll()
-    .then((results) => {
-      this.streetartlist = results;
-    });
-  };
-
-  this.uploader.onErrorItem = (item, response, status, headers) => {
-    this.feedback = JSON.parse(response).message;
-  };
-}
-
-submitForm(form) {
-  if (form.valid) {
-    this.uploader.onBuildItemForm = (item, form2) => {
-      form2.append('name', this.name);
-      form2.append('author', this.author)
-    };
-  }
-  this.uploader.uploadAll();
-}
+constructor() {
 }

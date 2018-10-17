@@ -1,30 +1,29 @@
 <h1> Upload a street art photo</h1>
+<form>
+  <div class="editing">
+    <input type="text" name="name" [(ngModel)]="newStreetart.name">
+    <input type="text" name="author" [(ngModel)]="newStreetart.author">
+    <select name="photo" [(ngModel)]="newStreetart.category">
+      <option value="">- Pick one -</option>
+      <option img src="../../../../public/images/image2.jpg">Streetart1</option>
+      <option img src="../../../../public/images/image3.jpg">Streetart2</option>
+      <option img src="../../../../public/images/image4.jpg">Streetart3</option>
+    </select>
+    <button (click)="handleAddClick()">Add!</button>
+  </div>
 
-<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate >
-  <div class="field">
-    <label>Name</label>
-    <input type="text" name="name" [(ngModel)]="name" #numberField="ngModel"/>
-  </div>
-  <div class="field">
-    <label>Author</label>
-    <input type="text" name="author" [(ngModel)]="author" #numberField="ngModel"/>
+  <div class="card preview">
+    <h2>{{newStreetart.name}}</h2>
+    <h3>{{newStreetart.author}}</h3>
+    <img *ngIf="newCategory" [src]="imgs[newStreetart.category]">
   </div>
 
-  <div class="field">
-    <label>Photo</label>
-    <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
-  </div>
-  
-  
-  <div class="field submit">
-    <button type="submit" >Add a photo</button>
-  </div>
 </form>
 
-<div class="card-container"*ngIf="streetart">
-  <div class="card" *ngFor="let streetart of streetarts">
-    <h1>{{file.name}}</h1>
-    <h1>{{file.author}}</h1>
-    <img src="{{file.image}}" alt="">
-  </div> 
-</div>
+<section class="card-container">
+  <div class="card" *ngFor="let item of streetArts">
+    <h1>{{item.name}}</h1>
+    <p>{{item.author}}</p>
+    <img [src]="item.url" alt="">
+  </div>
+</section>

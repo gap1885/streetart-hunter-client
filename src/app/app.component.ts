@@ -20,11 +20,13 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.user = this.authService.getUser();
     this.authService.userChange$.subscribe((user) => {
       this.loading = false;
       this.user = user;
       this.anon = !user;
     });
+  
   }
 
   logout() {

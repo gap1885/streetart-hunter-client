@@ -7,7 +7,7 @@ import { StreetartService } from '../../services/streetart.service';
   styleUrls: ['./streetart-list.component.css']
 })
 export class StreetartListComponent implements OnInit {
-  streetart: Array<any>;
+  streetArts: Array<any>
   error = false;
 
   constructor(private StreetartService:StreetartService) { }
@@ -15,13 +15,11 @@ export class StreetartListComponent implements OnInit {
   ngOnInit() {
     this.StreetartService.getAll()
     .then((results) => {
-      this.streetart = results;
+      this.streetArts = results
+      console.log(this.streetArts)
     })
-    .catch((error) => {
-      console.log(error);
-      this.error = true;
-    });
   }
+ 
 
 }
 
