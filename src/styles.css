@@ -17,18 +17,18 @@ body {
 /* ---- typography ---- */
 
 body {
-  color: #111;
+  color: rgb(43, 37, 37);
   font-family:  'Segoe UI';
   font-size: 14px;
   line-height: 147%;
+  text-shadow: white 3px 3px 10px;;
 }
 
-h1 {color: #111;
+h1 {color:rgb(36, 2, 2);
   font-family:  'Segoe UI';
-  font-size: 20px;
-  line-height: 147%;
-  margin-left: 110px;
-  position: relative;
+  font-size: 50px;
+ line-height: 55px;
+  margin-top: 0px;
 
 
 }
@@ -46,53 +46,60 @@ h3 {
 }
 
 p {
-  position: absolute;
-
+  position: relative;
   margin-left: 40px;
-  margin-bottom: 40px;
+  font-size: 20px;
+  border-spacing: 4px;
+  line-height: 25px;
+  margin-left: 40px;
 }
 
 
 
 /* ---- layout ---- */
-html {
-  background-color: lightgray;
+html{
+  background-image: url(../public/images/67122-OCGGJW-367.jpg);
 }
 
 #site-header {
   
-  padding: 30px 0;
-  color: red;
-  margin-left: 10px;
-  justify-content: space-between;
-
-
+  padding: 30px;
+  border-radius: 50px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 65px;
+  display: flex;
+  justify-items: space-between;
+  box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  opacity:60% ;
 }
 
 #site-footer {
-  color: red;
+  color: rgb(26, 12, 12);
   padding: 60px 0;
   align-items: flex-end;
+  display: block;
+  
 ;
 }
 
 #site-main {
-  margin-left: 10px;
-  margin-bottom: 60px;
+  margin-left: 60px;
+
   justify-content: space-between;
 }
 
 .card.container {
   display: flex;
-  margin: 10 3 10 10px;
+  margin-left: 60px;
   padding: 20px;
   justify-content: space-between;
+  width: 50%;
+
 }
 
-.section {
-  margin-bottom: 20px;
-  padding-top: 20px;
-}
+
 
 @media (min-width: 768px) {
   .container {
@@ -105,49 +112,114 @@ html {
 
 
 /* ---- components ---- */
+a{
+  margin: 20px;
+}
 .about{
 align-content: center;
 margin-top: 20px;
 margin-bottom: 70px;
 }
 
+.input{
+  align-content: space-between;
+  margin-left: 10px;
 
+
+}
 
 .button {
   width: 50%;
-  background-color: blue;
+  background-color: rgb(170, 170, 202);
   color: #fff;
-  border: 1px solid #fff
+  border: 1px solid #fff;
+  margin-left: 70px;
+}
+.pick{
+  width: 50%;
+  background-color: rgb(123, 123, 129);
+  color: black;
+
 }
 
-.button-alt {
-  color: blue;
-  background-color: #fff;
-}
 
 /* ---- section ---- */
 .card {
   display: block;
-  background-color: rgba(252, 251, 249, 0.6);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 20px;
   border-radius: 50px;
-  text-align: center;
- 
+  border: 1px solid #ccc;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0;
+  
 }
-
 
 img{
-  display: block;
-  width: 50%;
-  margin: 100px;
+  
+  padding: initial;
+  border-radius: 50px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
 }
+
 .logo{
   width: 30%;
-  margin: 20px;
-  margin-left: 120px;
+  margin-top: 70px;
+  margin-bottom: 0px;
+  position: relative;
  
 
 }
-  
+
+form.is-processing {
+	opacity: 0.5;
+}
+
+form .field {
+  margin-bottom: 20px;
+  display: flex;
+  padding: 20px;
+  margin-left: 10px;
+}
+
+label {
+  font-size: 20px;
+	display: block;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 30px;
+	font-style: bold;
+}
+
+form .input {
+  padding: 5px;
+  font-size: 16px;
+  margin: 10px; 
+  border-color: rgb(156, 156, 161);
+}
+
+form .submit {
+  padding-top: 20px;
+}
+
+
+form .field.has-error label {
+	color: red;
+}
+
+form .validation {
+	margin: 5px 0 10px;
+	color: red;
+}
+
+form .field.has-error input {
+	border: 1px solid  red;
+}
 
