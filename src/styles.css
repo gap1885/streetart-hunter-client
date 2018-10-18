@@ -79,7 +79,7 @@ a{
 
 /* ---- layout ---- */
 html{
-  background-image: url(../public/images/67122-OCGGJW-367.jpg);
+  background-image: url('./assets/images/background.jpg');
   opacity: 60%;
 }
 
