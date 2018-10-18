@@ -8,6 +8,7 @@ import { environment } from '../../environments/environment';
 })
 export class StreetartCreateService {
   private baseUrl = `${environment.apiUrl}/streetart-create`;
+  private apiUrl = environment.apiUrl + '/auth';
 
   constructor( private httpClient: HttpClient) { }
 
@@ -15,7 +16,9 @@ export class StreetartCreateService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(this.baseUrl, options)
+    return this.httpClient.get(this.apiUrl, options)
       .toPromise();
   }
 }
+
+  

@@ -7,8 +7,8 @@ import { Identifiers } from '@angular/compiler';
   providedIn: 'root'
 })
 export class StreetartService {
- 
-    private baseUrl = `${environment.apiUrl}/streetart`;
+  
+  private apiUrl = environment.apiUrl + '/streetart';
   
     constructor(private httpClient: HttpClient) {}
 
@@ -16,7 +16,7 @@ export class StreetartService {
       const options = {
         withCredentials: true
       };
-      return this.httpClient.get(`${this.baseUrl}`, options)
+      return this.httpClient.get(`${this.apiUrl}`, options)
         .toPromise();
 
     }
@@ -24,14 +24,14 @@ export class StreetartService {
       const options = {
         withCredentials: true
       };
-      return this.httpClient.post(`${this.baseUrl}`, data, options)
+      return this.httpClient.post(`${this.apiUrl}`, data, options)
         .toPromise();
     }
     getStreetart(id:Identifiers): Promise<any> {
       const options = {
         withCredentials: true
       };
-      return this.httpClient.post('${this.baseUrl}', id, options)
+      return this.httpClient.post('${this.apiUrl}', id, options)
         .toPromise();
       
  

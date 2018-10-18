@@ -13,7 +13,6 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { LoginComponent } from './pages/login/login.component';
 import { StreetartListComponent } from './pages/streetart-list/streetart-list.component';
 import { StreetartCreateComponent } from './pages/streetart-create/streetart-create.component';
-import { StreetartDetailComponent } from './pages/streetart-detail/streetart-detail.component';
 import { StreetartProfileComponent } from './pages/streetart-profile/streetart-profile.component';
 
 import { InitAuthGuard } from './guards/init-auth.guard';
@@ -29,7 +28,6 @@ const routes: Routes = [
   { path: 'streetart', component: StreetartListComponent, canActivate: [InitAuthGuard] }, 
   { path: 'profile', component: StreetartProfileComponent, canActivate: [RequireUserGuard]},
   { path: 'streetart/create', component: StreetartCreateComponent, canActivate: [RequireUserGuard] },
-  { path: 'streetart/:id', component: StreetartDetailComponent, canActivate: [RequireUserGuard]},
   { path: '**', component: NotFoundComponent, canActivate: [InitAuthGuard]},
 
 
@@ -45,7 +43,6 @@ const routes: Routes = [
     LoginComponent,
     StreetartListComponent,
     StreetartCreateComponent,
-    StreetartDetailComponent,
     StreetartProfileComponent,
     StreetartCardComponent,
     NotFoundComponent
