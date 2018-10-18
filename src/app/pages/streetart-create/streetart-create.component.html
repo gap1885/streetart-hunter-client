@@ -1,11 +1,15 @@
+
+
 <h2> Upload a street art photo</h2>
 
 <form class="card-container" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate>
   <div class="editing">
+    <label class="label">Name</label>
     <input class="input" type="text" name="name" [(ngModel)]="name">
+    <label class="label">Author</label>
     <input class="input" type="text" name="author" [(ngModel)]="author">
     <select class = "pick" name="photo" [(ngModel)]="url">
-      <option  value="">- Pick one -</option>
+      <option  value="">Pick one </option>
       <option value="http://indietravel.net/wp-content/uploads/2013/11/Street-Art-by-Alice-in-Vitry-sur-Seine-France-1.jpeg">Streetart1</option>
       <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrcY3y-hBRHnhsbUsSwNBQYjC-vzdZETzqvcCt-E1Q7e95RQPBnA">Streetart2</option>
       <option value="https://cdn.theculturetrip.com/wp-content/uploads/2015/11/2905082810_22aaa7aed4_z.jpg">Streetart3</option>
@@ -14,8 +18,9 @@
   </div>
 </form>
 
-<section class = "card-container" >
-  <div class="class"  *ngFor="let streetart of streetarts">
-    <img [src]="streetart.url" alt="">
+<section class="card-container">
+  <div class="card" *ngFor="let item of streetarts">
+    <img class="card-image"[src]="item.url" alt="">
   </div>
 </section>
+

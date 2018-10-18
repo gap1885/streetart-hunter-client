@@ -1,6 +1,4 @@
 
-<img class= logo src="../../../../public/images/logo2.png" alt="logo">
-
 <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">

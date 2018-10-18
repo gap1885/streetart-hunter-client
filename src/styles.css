@@ -19,14 +19,15 @@ body {
 body {
   color: rgb(43, 37, 37);
   font-family:  'Segoe UI';
-  font-size: 14px;
+  font-size: 20px;
+  
   line-height: 147%;
-  text-shadow: white 3px 3px 10px;;
+  text-shadow: white 5px 5px 10px;;
 }
 
 h1 {color:rgb(36, 2, 2);
   font-family:  'Segoe UI';
-  font-size: 50px;
+  font-size: 60px;
  line-height: 55px;
   margin-top: 0px;
 
@@ -35,23 +36,43 @@ h1 {color:rgb(36, 2, 2);
 
 h2 {color: #111;
   font-family:  'Segoe UI';
-  font-size: 12px;
-  line-height: 147%;}
+  font-size: 30px;
+  line-height: 147%;
+  margin-left: 40px;
+}
+
 
 h3 {
   color: #111;
   font-family:  'Segoe UI';
-  font-size: 10px;
+  font-size: 25px;
   line-height: 147%;
+  margin-top: 50px; 
+}
+h4 {
+  color: rgb(49, 37, 37);
+  font-family:  'Segoe UI';
+  font-size: 20px;
+  margin-left: 130px;
+  margin-top: 0;
+  margin-botton: 30px;
 }
 
 p {
+  color: rgb(75, 36, 36);
   position: relative;
   margin-left: 40px;
   font-size: 20px;
   border-spacing: 4px;
   line-height: 25px;
-  margin-left: 40px;
+  
+}
+a{
+  position: relative;
+  font-size: 20px;
+  border-spacing: 4px;
+  line-height: 25px;
+
 }
 
 
@@ -59,6 +80,7 @@ p {
 /* ---- layout ---- */
 html{
   background-image: url(../public/images/67122-OCGGJW-367.jpg);
+  opacity: 60%;
 }
 
 #site-header {
@@ -73,6 +95,10 @@ html{
   justify-items: space-between;
   box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   opacity:60% ;
+  color: #111;
+  font-family:  'Segoe UI';
+  font-size: 15px;
+  text-shadow: white 5px 5px 10px;;
 }
 
 #site-footer {
@@ -92,7 +118,7 @@ html{
 
 .card.container {
   display: flex;
-  margin-left: 60px;
+  margin-left: 80px;
   padding: 20px;
   justify-content: space-between;
   width: 50%;
@@ -129,11 +155,11 @@ margin-bottom: 70px;
 }
 
 .button {
-  width: 50%;
-  background-color: rgb(170, 170, 202);
+  width: 60%;
+  background-color: rgb(95, 95, 133);
   color: #fff;
   border: 1px solid #fff;
-  margin-left: 70px;
+  margin-left: 10px;
 }
 .pick{
   width: 50%;
@@ -195,9 +221,22 @@ label {
   margin-bottom: 10px;
   margin-right: 10px;
   margin-left: 30px;
-	font-style: bold;
+  color: #111;
+  font-family:  'Segoe UI';
+  text-shadow: white 5px 5px 10px;;
+  
 }
-
+.label{
+  font-size: 20px;
+	display: block;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 30px;
+  color: #111;
+  font-family:  'Segoe UI';
+  text-shadow: white 5px 5px 10px;;
+  
+}
 form .input {
   padding: 5px;
   font-size: 16px;
